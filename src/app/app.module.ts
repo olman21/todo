@@ -11,6 +11,8 @@ import { TodoService } from './todos/services/todo.service';
 import { EditTodoComponent } from './todos/components/edit-todo/edit-todo.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './todos/store';
+import { EffectsModule } from '@ngrx/effects';
+import { effects } from './todos/store/effects';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { reducers } from './todos/store';
     AngularFireModule.initializeApp(environment.firebase, 'todo'),
     AngularFireDatabaseModule,
     ReactiveFormsModule,
-    StoreModule.forRoot(reducers)
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot(effects)
   ],
   providers: [
     TodoService

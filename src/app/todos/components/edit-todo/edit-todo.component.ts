@@ -1,11 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from "@angular/core";
 import { FormGroup, FormBuilder } from "@angular/forms";
 import { ToDo } from "../../models/todo";
 
 @Component({
   selector: "app-edit-todo",
   templateUrl: "./edit-todo.component.html",
-  styleUrls: ["./edit-todo.component.css"]
+  styleUrls: ["./edit-todo.component.css"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EditTodoComponent implements OnInit {
   constructor(private fb: FormBuilder) {}

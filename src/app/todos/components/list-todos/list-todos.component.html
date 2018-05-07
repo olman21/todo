@@ -4,5 +4,8 @@
     <div>
       <span>Done? {{todo.isDone ? 'Yes' : 'No'}}</span>
     </div>
+    <button type="button" class="close" (click)="deleteTodo($event,todo.$key)" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </a>
 </div>

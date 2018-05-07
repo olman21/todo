@@ -1,10 +1,11 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <app-list-todos (todoSelected)="onSelectedTodo($event)" [todoList]="todoList$ | async"></app-list-todos>
+            <div *ngIf="loadingTodos$ | async">Loading...</div>
+            <app-list-todos (todoSelected)="onSelectedTodo($event)" (todoDeleted)="onDeleteTodo($event)" [todoList]="todoList$ | async"></app-list-todos>
         </div>
         <div class="col-sm">
-            <app-edit-todo [todo]="selectedTodo" (itemSaved)="onSaveItem($event)"></app-edit-todo>
+            <app-edit-todo [todo]="selectedTodo$ | async" (itemSaved)="onSaveItem($event)"></app-edit-todo>
         </div>
     </div>
 </div>
