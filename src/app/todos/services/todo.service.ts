@@ -24,6 +24,7 @@ export class TodoService {
   }
 
   addTodo(todo: ToDo): Observable<ToDo> {
+    debugger;
     delete todo.$key;
     return Observable.create(observer => {
       this.todoList.push(todo).then(newTodo => {

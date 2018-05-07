@@ -32,6 +32,6 @@ export class EditTodoComponent implements OnInit {
   }
 
   clearForm(){
-    this.form.reset();
+    this.form.patchValue({ id: 0,name: "", isDone: false, $key: "" });
   }
 }
