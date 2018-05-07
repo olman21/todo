@@ -1,0 +1,15 @@
+<form novalidate [formGroup]="form" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" formControlName="name" class="form-control" id="name" placeholder="Name">
+  </div>
+  <div class="form-group checkbox-group">
+    <input class="form-check-input" value="true" formControlName="isDone" type="checkbox" value="" id="defaultCheck1">
+    <label class="form-check-label" for="defaultCheck1">
+      Done?
+    </label>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Save</button>
+  <button type="button" class="btn btn-Secondary" (click)="clearForm()">New</button>
+</form>
